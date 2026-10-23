@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Slot — Bloom & Glow Spa</title>
+<meta name="description" content="Book your appointment at Bloom & Glow Spa in under a minute — choose your treatment, date and time.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo">🌸 Bloom<span class="bloom">&Glow</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="book.html" class="nav-cta">Book a Slot</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero section-alt">
+    <div class="container">
+      <p class="breadcrumb">Book Online</p>
+      <h1>Reserve your glow slot</h1>
+      <p style="max-width:60ch;margin:0 auto;color:#7a5563;">Pick a treatment, a date, and a time that fits your day. Confirmation lands in your inbox instantly.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="max-width:760px;">
+      <div class="form-card">
+
+        <form id="bookingForm" novalidate>
+
+          <div class="form-row">
+            <div class="field">
+              <label>Choose a Treatment</label>
+              <div class="pill-select">
+                <input type="radio" name="service" id="svc1" value="Hydra-Glow Facial" checked>
+                <label for="svc1">✨ Hydra-Glow Facial</label>
+
+                <input type="radio" name="service" id="svc2" value="Classic Manicure">
+                <label for="svc2">💅 Classic Manicure</label>
+
+                <input type="radio" name="service" id="svc3" value="Aromatherapy Massage">
+                <label for="svc3">💆‍♀️ Aromatherapy Massage</label>
+
+                <input type="radio" name="service" id="svc4" value="Bridal Glow Package">
+                <label for="svc4">👰 Bridal Glow Package</label>
+
+                <input type="radio" name="service" id="svc5" value="Signature Blowout">
+                <label for="svc5">💇‍♀️ Signature Blowout</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="field">
+              <label for="bookingDate">Preferred Date</label>
+              <input type="date" id="bookingDate" name="date" required>
+              <div class="error-msg"></div>
+            </div>
+            <div class="field">
+              <label for="bookingGuests">Number of Guests</label>
+              <select id="bookingGuests" name="guests">
+                <option>1 (Just me)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label>Available Time Slots</label>
+              <div class="slot-grid">
+                <input type="radio" name="slot" id="s1" value="10:00 AM">
+                <label for="s1">10:00 AM</label>
+
+                <input type="radio" name="slot" id="s2" value="11:00 AM">
+                <label for="s2">11:00 AM</label>
+
+                <input type="radio" name="slot" id="s3" value="12:00 PM" disabled>
+                <label for="s3">12:00 PM</label>
+
+                <input type="radio" name="slot" id="s4" value="1:00 PM">
+                <label for="s4">1:00 PM</label>
+
+                <input type="radio" name="slot" id="s5" value="2:00 PM">
+                <label for="s5">2:00 PM</label>
+
+                <input type="radio" name="slot" id="s6" value="3:00 PM" disabled>
+                <label for="s6">3:00 PM</label>
+
+                <input type="radio" name="slot" id="s7" value="4:00 PM">
+                <label for="s7">4:00 PM</label>
+
+                <input type="radio" name="slot" id="s8" value="5:00 PM">
+                <label for="s8">5:00 PM</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="field">
+              <label for="bookingName">Full Name</label>
+              <input type="text" id="bookingName" name="name" required placeholder="Your name">
+              <div class="error-msg"></div>
+            </div>
+            <div class="field">
+              <label for="bookingPhone">Phone Number</label>
+              <input type="tel" id="bookingPhone" name="phone" required placeholder="(555) 123-4567">
+              <div class="error-msg"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="bookingEmail">Email Address</label>
+              <input type="email" id="bookingEmail" name="email" required placeholder="you@example.com">
+              <div class="error-msg"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="bookingNotes">Notes for Us (optional)</label>
+              <textarea id="bookingNotes" name="notes" placeholder="Allergies, preferences, special requests..."></textarea>
+            </div>
+          </div>
+
+          <div class="booking-summary" id="bookingSummary"></div>
+
+          <button type="submit" class="btn btn-primary btn-block mt-lg">Confirm My Slot 💌</button>
+        </form>
+
+        <div class="form-success" id="bookingSuccess">
+          <div class="check">✓</div>
+          <h3>You're all booked!</h3>
+          <p style="color:#7a5563;">A confirmation email is on its way. We can't wait to pamper you.</p>
+          <a href="index.html" class="btn btn-outline mt-lg">Back to Home</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="index.html" class="logo">🌸 Bloom<span class="bloom">&Glow</span></a>
+      <p>A boutique beauty studio for facials, nails, massage and bridal glow — pink, pretty, and always gentle on your skin.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">📸</a>
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="WhatsApp">💬</a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About Us</a>
+      <a href="book.html">Book a Slot</a>
+    </div>
+    <div>
+      <h4>Studio Hours</h4>
+      <p>Mon–Sat: 10am – 8pm</p>
+      <p>Sunday: 11am – 5pm</p>
+    </div>
+    <div>
+      <h4>Visit Us</h4>
+      <p>12 Rosewood Lane, Petal City</p>
+      <p>hello@bloomandglow.spa</p>
+      <p>+1 (555) 019-2044</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© <span class="year"></span> Bloom & Glow Spa. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
